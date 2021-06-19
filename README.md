@@ -1,4 +1,4 @@
-# SecretMessageIoTProject
+# Secret Message IoT Project
 Using IoT technology and Morse Code building a secret messaging system.
 
 Use this blog and video link for more information...
