@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en-US">
+
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+
+		<title>Secret Chat using &#8220;Morse Code and LED&#8221; &#8211; Bolt IoT project submission</title>
+	<script>
+	( function() {
+		var query = document.location.search;
+
+		if ( query && query.indexOf( 'preview=true' ) !== -1 ) {
+			window.name = 'wp-preview-5296';
+		}
+
+		if ( window.addEventListener ) {
+			window.addEventListener( 'unload', function() { window.name = ''; }, false );
+		}
+	}());
+	</script>
+	<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Bolt IoT project submission &raquo; Feed" href="https://projectsubmission.boltiot.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Bolt IoT project submission &raquo; Comments Feed" href="https://projectsubmission.boltiot.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Bolt IoT project submission &raquo; Secret Chat using &#8220;Morse Code and LED&#8221; Comments Feed" href="https://projectsubmission.boltiot.com/?p=5296/feed/" />
+		<script>
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/projectsubmission.boltiot.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://projectsubmission.boltiot.com/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3' media='all' />
+<link rel='stylesheet' id='twentytwenty-style-css'  href='https://projectsubmission.boltiot.com/wp-content/themes/twentytwenty/style.css?ver=1.5' media='all' />
+<style id='twentytwenty-style-inline-css'>
+.color-accent,.color-accent-hover:hover,.color-accent-hover:focus,:root .has-accent-color,.has-drop-cap:not(:focus):first-letter,.wp-block-button.is-style-outline,a { color: #e22658; }blockquote,.border-color-accent,.border-color-accent-hover:hover,.border-color-accent-hover:focus { border-color: #e22658; }button,.button,.faux-button,.wp-block-button__link,.wp-block-file .wp-block-file__button,input[type="button"],input[type="reset"],input[type="submit"],.bg-accent,.bg-accent-hover:hover,.bg-accent-hover:focus,:root .has-accent-background-color,.comment-reply-link { background-color: #e22658; }.fill-children-accent,.fill-children-accent * { fill: #e22658; }:root .has-background-color,button,.button,.faux-button,.wp-block-button__link,.wp-block-file__button,input[type="button"],input[type="reset"],input[type="submit"],.wp-block-button,.comment-reply-link,.has-background.has-primary-background-color:not(.has-text-color),.has-background.has-primary-background-color *:not(.has-text-color),.has-background.has-accent-background-color:not(.has-text-color),.has-background.has-accent-background-color *:not(.has-text-color) { color: #ffffff; }:root .has-background-background-color { background-color: #ffffff; }body,.entry-title a,:root .has-primary-color { color: #000000; }:root .has-primary-background-color { background-color: #000000; }cite,figcaption,.wp-caption-text,.post-meta,.entry-content .wp-block-archives li,.entry-content .wp-block-categories li,.entry-content .wp-block-latest-posts li,.wp-block-latest-comments__comment-date,.wp-block-latest-posts__post-date,.wp-block-embed figcaption,.wp-block-image figcaption,.wp-block-pullquote cite,.comment-metadata,.comment-respond .comment-notes,.comment-respond .logged-in-as,.pagination .dots,.entry-content hr:not(.has-background),hr.styled-separator,:root .has-secondary-color { color: #6d6d6d; }:root .has-secondary-background-color { background-color: #6d6d6d; }pre,fieldset,input,textarea,table,table *,hr { border-color: #dbdbdb; }caption,code,code,kbd,samp,.wp-block-table.is-style-stripes tbody tr:nth-child(odd),:root .has-subtle-background-background-color { background-color: #dbdbdb; }.wp-block-table.is-style-stripes { border-bottom-color: #dbdbdb; }.wp-block-latest-posts.is-grid li { border-top-color: #dbdbdb; }:root .has-subtle-background-color { color: #dbdbdb; }body:not(.overlay-header) .primary-menu > li > a,body:not(.overlay-header) .primary-menu > li > .icon,.modal-menu a,.footer-menu a, .footer-widgets a,#site-footer .wp-block-button.is-style-outline,.wp-block-pullquote:before,.singular:not(.overlay-header) .entry-header a,.archive-header a,.header-footer-group .color-accent,.header-footer-group .color-accent-hover:hover { color: #cd2653; }.social-icons a,#site-footer button:not(.toggle),#site-footer .button,#site-footer .faux-button,#site-footer .wp-block-button__link,#site-footer .wp-block-file__button,#site-footer input[type="button"],#site-footer input[type="reset"],#site-footer input[type="submit"] { background-color: #cd2653; }.header-footer-group,body:not(.overlay-header) #site-header .toggle,.menu-modal .toggle { color: #000000; }body:not(.overlay-header) .primary-menu ul { background-color: #000000; }body:not(.overlay-header) .primary-menu > li > ul:after { border-bottom-color: #000000; }body:not(.overlay-header) .primary-menu ul ul:after { border-left-color: #000000; }.site-description,body:not(.overlay-header) .toggle-inner .toggle-text,.widget .post-date,.widget .rss-date,.widget_archive li,.widget_categories li,.widget cite,.widget_pages li,.widget_meta li,.widget_nav_menu li,.powered-by-wordpress,.to-the-top,.singular .entry-header .post-meta,.singular:not(.overlay-header) .entry-header .post-meta a { color: #6d6d6d; }.header-footer-group pre,.header-footer-group fieldset,.header-footer-group input,.header-footer-group textarea,.header-footer-group table,.header-footer-group table *,.footer-nav-widgets-wrapper,#site-footer,.menu-modal nav *,.footer-widgets-outer-wrapper,.footer-top { border-color: #dcd7ca; }.header-footer-group table caption,body:not(.overlay-header) .header-inner .toggle-wrapper::before { background-color: #dcd7ca; }
+</style>
+<link rel='stylesheet' id='twentytwenty-print-style-css'  href='https://projectsubmission.boltiot.com/wp-content/themes/twentytwenty/print.css?ver=1.5' media='print' />
+<script src='https://projectsubmission.boltiot.com/wp-content/themes/twentytwenty/assets/js/index.js?ver=1.5' id='twentytwenty-js-js' async></script>
+<link rel="https://api.w.org/" href="https://projectsubmission.boltiot.com/wp-json/" /><link rel="alternate" type="application/json" href="https://projectsubmission.boltiot.com/wp-json/wp/v2/posts/5296" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://projectsubmission.boltiot.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://projectsubmission.boltiot.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Submitting a project' href='https://projectsubmission.boltiot.com/2020/11/23/submitting-a-project/' />
+<meta name="generator" content="WordPress 5.5.3" />
+<link rel='shortlink' href='https://projectsubmission.boltiot.com/?p=5296' />
+<link rel="alternate" type="application/json+oembed" href="https://projectsubmission.boltiot.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fprojectsubmission.boltiot.com%2F%3Fp%3D5296" />
+<link rel="alternate" type="text/xml+oembed" href="https://projectsubmission.boltiot.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fprojectsubmission.boltiot.com%2F%3Fp%3D5296&#038;format=xml" />
+<link rel="shortcut icon" href="http://projectsubmission.boltiot.com/wp-content/uploads/2021/01/LogoCloudPage.png" />	<script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script>
+	<style id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+			<style id="wp-custom-css">
+			.toggle-wrapper.nav-toggle-wrapper{
+	display:none;
+}
+
+.color-accent, .color-accent-hover:hover, .color-accent-hover:focus, :root .has-accent-color, .has-drop-cap:not(:focus):first-letter, .wp-block-button.is-style-outline, a {
+    color: blue;
+}
+
+
+body:not(.overlay-header) .primary-menu > li > a, body:not(.overlay-header) .primary-menu > li > .icon, .modal-menu a, .footer-menu a, .footer-widgets a, #site-footer .wp-block-button.is-style-outline, .wp-block-pullquote:before, .singular:not(.overlay-header) .entry-header a, .archive-header a, .header-footer-group .color-accent, .header-footer-group .color-accent-hover:hover {
+    color: blue;
+}		</style>
+		
+	</head>
+
+	<body class="post-template-default single single-post postid-5296 single-format-standard logged-in custom-background wp-custom-logo wp-embed-responsive singular enable-search-modal missing-post-thumbnail has-single-pagination showing-comments show-avatars footer-top-visible reduced-spacing">
+
+		<a class="skip-link screen-reader-text" href="#site-content">Skip to the content</a>
+		<header id="site-header" class="header-footer-group" role="banner">
+
+			<div class="header-inner section-inner">
+
+				<div class="header-titles-wrapper">
+
+					
+						<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+							<span class="toggle-inner">
+								<span class="toggle-icon">
+									<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)" /></svg>								</span>
+								<span class="toggle-text">Search</span>
+							</span>
+						</button><!-- .search-toggle -->
+
+					
+					<div class="header-titles">
+
+						<div class="site-logo faux-heading"><a href="https://projectsubmission.boltiot.com/" class="custom-logo-link" rel="home"><img width="112" height="84" style="height: 84px;" src="https://projectsubmission.boltiot.com/wp-content/uploads/2020/11/cropped-download.png" class="custom-logo" alt="Bolt IoT project submission" /></a><span class="screen-reader-text">Bolt IoT project submission</span></div><div class="site-description">Submit your projects here for evaluation</div><!-- .site-description -->
+					</div><!-- .header-titles -->
+
+					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+						<span class="toggle-inner">
+							<span class="toggle-icon">
+								<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="26" height="7" viewBox="0 0 26 7"><path fill-rule="evenodd" d="M332.5,45 C330.567003,45 329,43.4329966 329,41.5 C329,39.5670034 330.567003,38 332.5,38 C334.432997,38 336,39.5670034 336,41.5 C336,43.4329966 334.432997,45 332.5,45 Z M342,45 C340.067003,45 338.5,43.4329966 338.5,41.5 C338.5,39.5670034 340.067003,38 342,38 C343.932997,38 345.5,39.5670034 345.5,41.5 C345.5,43.4329966 343.932997,45 342,45 Z M351.5,45 C349.567003,45 348,43.4329966 348,41.5 C348,39.5670034 349.567003,38 351.5,38 C353.432997,38 355,39.5670034 355,41.5 C355,43.4329966 353.432997,45 351.5,45 Z" transform="translate(-329 -38)" /></svg>							</span>
+							<span class="toggle-text">Menu</span>
+						</span>
+					</button><!-- .nav-toggle -->
+
+				</div><!-- .header-titles-wrapper -->
+
+				<div class="header-navigation-wrapper">
+
+					
+							<nav class="primary-menu-wrapper" aria-label="Horizontal" role="navigation">
+
+								<ul class="primary-menu reset-list-style">
+
+								
+								</ul>
+
+							</nav><!-- .primary-menu-wrapper -->
+
+						
+						<div class="header-toggles hide-no-js">
+
+						
+							<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+
+								<button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+									<span class="toggle-inner">
+										<span class="toggle-text">Menu</span>
+										<span class="toggle-icon">
+											<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="26" height="7" viewBox="0 0 26 7"><path fill-rule="evenodd" d="M332.5,45 C330.567003,45 329,43.4329966 329,41.5 C329,39.5670034 330.567003,38 332.5,38 C334.432997,38 336,39.5670034 336,41.5 C336,43.4329966 334.432997,45 332.5,45 Z M342,45 C340.067003,45 338.5,43.4329966 338.5,41.5 C338.5,39.5670034 340.067003,38 342,38 C343.932997,38 345.5,39.5670034 345.5,41.5 C345.5,43.4329966 343.932997,45 342,45 Z M351.5,45 C349.567003,45 348,43.4329966 348,41.5 C348,39.5670034 349.567003,38 351.5,38 C353.432997,38 355,39.5670034 355,41.5 C355,43.4329966 353.432997,45 351.5,45 Z" transform="translate(-329 -38)" /></svg>										</span>
+									</span>
+								</button><!-- .nav-toggle -->
+
+							</div><!-- .nav-toggle-wrapper -->
+
+							
+							<div class="toggle-wrapper search-toggle-wrapper">
+
+								<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+									<span class="toggle-inner">
+										<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)" /></svg>										<span class="toggle-text">Search</span>
+									</span>
+								</button><!-- .search-toggle -->
+
+							</div>
+
+							
+						</div><!-- .header-toggles -->
+						
+				</div><!-- .header-navigation-wrapper -->
+
+			</div><!-- .header-inner -->
+
+			<div class="search-modal cover-modal header-footer-group" data-modal-target-string=".search-modal">
+
+	<div class="search-modal-inner modal-inner">
+
+		<div class="section-inner">
+
+			<form role="search" aria-label="Search for:" method="get" class="search-form" action="https://projectsubmission.boltiot.com/">
+	<label for="search-form-1">
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" id="search-form-1" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<input type="submit" class="search-submit" value="Search" />
+</form>
+
+			<button class="toggle search-untoggle close-search-toggle fill-children-current-color" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+				<span class="screen-reader-text">Close search</span>
+				<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102" /></svg>			</button><!-- .search-toggle -->
+
+		</div><!-- .section-inner -->
+
+	</div><!-- .search-modal-inner -->
+
+</div><!-- .menu-modal -->
+
+		</header><!-- #site-header -->
+
+		
+<div class="menu-modal cover-modal header-footer-group" data-modal-target-string=".menu-modal">
+
+	<div class="menu-modal-inner modal-inner">
+
+		<div class="menu-wrapper section-inner">
+
+			<div class="menu-top">
+
+				<button class="toggle close-nav-toggle fill-children-current-color" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".menu-modal">
+					<span class="toggle-text">Close Menu</span>
+					<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102" /></svg>				</button><!-- .nav-toggle -->
+
+				
+					<nav class="expanded-menu" aria-label="Expanded" role="navigation">
+
+						<ul class="modal-menu reset-list-style">
+							<li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><div class="ancestor-wrapper"><a href="http://projectsubmission.boltiot.com/">Home</a></div><!-- .ancestor-wrapper --></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><div class="ancestor-wrapper"><a href="https://projectsubmission.boltiot.com/about/">About</a></div><!-- .ancestor-wrapper --></li>
+<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><div class="ancestor-wrapper"><a href="https://projectsubmission.boltiot.com/blog/">Blog</a></div><!-- .ancestor-wrapper --></li>
+<li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><div class="ancestor-wrapper"><a href="https://projectsubmission.boltiot.com/contact/">Contact</a></div><!-- .ancestor-wrapper --></li>
+						</ul>
+
+					</nav>
+
+					
+					<nav class="mobile-menu" aria-label="Mobile" role="navigation">
+
+						<ul class="modal-menu reset-list-style">
+
+						
+						</ul>
+
+					</nav>
+
+					
+			</div><!-- .menu-top -->
+
+			<div class="menu-bottom">
+
+				
+			</div><!-- .menu-bottom -->
+
+		</div><!-- .menu-wrapper -->
+
+	</div><!-- .menu-modal-inner -->
+
+</div><!-- .menu-modal -->
+
+<main id="site-content" role="main">
+
+	
+<article class="post-5296 post type-post status-draft format-standard hentry category-uncategorized" id="post-5296">
+
+	
+<header class="entry-header has-text-align-center header-footer-group">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://projectsubmission.boltiot.com/category/uncategorized/" rel="category tag">Uncategorized</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h1 class="entry-title">Secret Chat using &#8220;Morse Code and LED&#8221;</h1>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://projectsubmission.boltiot.com/author/techieonmail/">Bhanu Pratap</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://projectsubmission.boltiot.com/?p=5296">June 19, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://projectsubmission.boltiot.com/?p=5296#respond">No Comments<span class="screen-reader-text"> on Secret Chat using &#8220;Morse Code and LED&#8221;</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<figure class="wp-block-image size-large is-style-default"><img loading="lazy" width="1024" height="576" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Bolt-IoT-Project-1024x576.png" alt="" class="wp-image-6575" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Bolt-IoT-Project-1024x576.png 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Bolt-IoT-Project-300x169.png 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Bolt-IoT-Project-768x432.png 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Bolt-IoT-Project-1536x864.png 1536w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Bolt-IoT-Project-1200x675.png 1200w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Bolt-IoT-Project.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<blockquote class="wp-block-quote"><p>During World War II, <strong>Alan Turing</strong> developed a machine called Turing Machine that helped break the complex German Enigma code,  which was generally regarded as unbreakable. (War-Wining Innovation)</p><cite><strong><span class="has-inline-color has-primary-color">Alan Turing</span></strong> was a British scientist and a pioneer in computer science. Many consider him as the<span class="has-inline-color has-primary-color"> Father of Modern Computer Science</span>.</cite></blockquote>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-group alignwide"><div class="wp-block-group__inner-container">
+<p class="has-normal-font-size">Privacy is becoming the top priority of every big social media but what if someone is spying on your personal messages, someone reading your messages (maybe someone knows your phone password), all that is in English so that makes it easy. So, what we do? You definitely don&#8217;t want your messages with your girlfriend to get public, right? So, we are building a simple <em><strong>Reverse Turing Machine</strong> or an Enigma Machine.</em> </p>
+
+
+
+<p class="has-normal-font-size">It will code your messages into Morse Code or any other custom-made secret language but the fun part is that your messages will appear as LED on/off signals, cool and complex to get meaning from something like that right? But if you have access to the cipher (a secret substitution of letters) then it is very easy to get the meaning of each signal. In our project demonstration, we will send an encrypted &#8220;<span class="has-inline-color has-accent-color">I LOVE YOU</span>&#8221; message to someone.</p>
+</div></div>
+</div></div>
+
+
+
+<h2><strong>Things used in this project</strong></h2>
+
+
+
+<h4><strong>Hardware Components-</strong></h4>
+
+
+
+<ol><li>Bolt Wi-Fi Module</li><li>USB Cable</li><li>LED </li><li>Buzzer</li><li>Resistor (330 ohms)</li><li>10cm Male to Male jumper cables</li><li>Breadboard</li><li>A 5V DC power source</li></ol>
+
+
+
+<h4><strong>Software Components-</strong></h4>
+
+
+
+<ol><li>Bolt Cloud Pro (For better and more API request handling)</li><li>Python IDE (PyCharm, community version)</li></ol>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<h2><strong>Demonstration</strong></h2>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="796" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-1-1024x796.jpg" alt="" class="wp-image-5719" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-1-1024x796.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-1-300x233.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-1-768x597.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-1.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div></div>
+
+
+
+<p>A complete demonstration cannot be shown in the picture, for that, I have included the complete video in the end so don&#8217;t worry, that will be more appropriate for it, here is a screenshot of the command given by me in PyCharm that autonomously controls the buzzer, LED and encoding (also if you want decryption I have given code for that too in my code as a comment). In short this is what is going to happen.</p>
+
+
+
+<ul id="block-3aed8dda-5844-48b4-9e23-5cc15aac3f0b"><li><strong>Message:<span class="has-inline-color has-accent-color"> I LOVE YOU</span></strong></li><li><strong>After Encryption:<span class="has-inline-color has-accent-color"> .. .-.. &#8212; …- . -.&#8211; &#8212; ..-</span></strong></li><li><strong>In list as Binary: <span class="has-inline-color has-accent-color">[&#8216;0&#8217;, &#8216;0&#8217;, &#8216; &#8216;, &#8216; &#8216;, &#8216;0&#8217;, &#8216;1&#8217;, &#8216;0&#8217;, &#8216;0&#8217;, &#8216; &#8216;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216; &#8216;, &#8216;0&#8217;, &#8216;0&#8217;, &#8216;0&#8217;, &#8216;1&#8217;, &#8216; &#8216;, &#8216;0&#8217;, &#8216; &#8216;, &#8216; &#8216;, &#8216;1&#8217;, &#8216;0&#8217;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216; &#8216;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216; &#8216;, &#8216;0&#8217;, &#8216;0&#8217;, &#8216;1&#8217;, &#8216; &#8216;]</span></strong></li><li><strong>And in the end, it will transform as <span class="has-inline-color has-accent-color">LED &#8216;ON and OFF&#8217;</span></strong></li></ul>
+
+
+
+<h2 id="block-36cf8df8-ea2c-4cfc-9bc4-6df329d3f580">Hardware Setup</h2>
+
+
+
+<p><strong>Step 1</strong>: <strong>Let&#8217;s start with connections on our Breadboard</strong></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="768" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-35-58-1024x768.jpg" alt="" class="wp-image-5876" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-35-58-1024x768.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-35-58-300x225.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-35-58-768x576.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-35-58-1200x900.jpg 1200w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-35-58.jpg 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<ul><li>Connect <span class="has-inline-color has-primary-color">breadboard</span> &gt; LED<sub>1</sub> &gt; resistor<sub>1</sub> (330ohms)(-ve of resistor with +ve of LED<sub>1</sub>). </li><li>Connect breadboard &gt; buzzer &gt; LED<sub>2</sub>&#8216;s -ve or short leg with -ve of buzzer and LED<sub>2</sub>&#8216;s +ve or long leg with the -ve of resistor<sub>2</sub> (330ohms).</li><li>Connect the -ve of LED<sub>1</sub> with -ve of LED<sub>2</sub> which is also the negative of our buzzer with a male to male jumper wire.</li></ul>
+
+
+
+<p><strong>Step </strong>2:&nbsp;<strong>Bolt WiFi Module Connection Setup</strong></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="768" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-39-39-1024x768.jpg" alt="" class="wp-image-5879" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-39-39-1024x768.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-39-39-300x225.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-39-39-768x576.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-39-39-1200x900.jpg 1200w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/photo_2021-06-07_14-39-39.jpg 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div></div>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<ul><li>Connect different Male to Male jumper wires on pins mentioned &#8211;</li><li>Jumper wire on pin 0 (Pin 0)</li><li>Jumper wire on pin 1 (Pin 1)</li><li>Jumper wire on pin 4 (Pin 2)</li><li>Jumper wire on pin Ground (Pin GND)</li></ul>
+</div></div>
+</div></div>
+
+
+
+<p></p>
+</div></div>
+</div></div>
+
+
+
+<p><strong>Step </strong>3: <strong>Breadboard to Bolt Wifi Module Connections</strong></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="796" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-4-1024x796.jpg" alt="" class="wp-image-5875" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-4-1024x796.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-4-300x233.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-4-768x597.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-4.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<ul><li>Pin 0 &gt; buzzer (+ve)</li><li>Pin 1 &gt; resistor<sub>1</sub> (+ve) (voltage supply for LED<sub>1</sub>)</li><li>Pin 4 &gt; resistor<sub>2</sub> (+ve) (voltage supply for LED<sub>2</sub>)</li><li>Pin GND &gt; (-ve of buzzer which is already linked with -ve of LED<sub>2</sub>)</li></ul>
+
+
+
+<h2 id="block-36cf8df8-ea2c-4cfc-9bc4-6df329d3f580">Software Programming</h2>
+
+
+
+<p><strong>Step 1</strong>:&nbsp;<strong>Getting the Bolt Cloud Pro Subscription</strong></p>
+
+
+
+<p>To have more API request limit which is good for faster working and calling our Bolt Wifi module, we need the Bolt Cloud Pro subscription. If you try the code without this you can face a temporary restriction on the cloud for few hours, so it is better to take the pro subscription.</p>
+
+
+
+<p>1) Go to https://cloud.boltiot.com/ and login and then click on the Billing tab in the left bottom corner as indicated in the picture below.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="525" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.51.46-1024x525.jpg" alt="" class="wp-image-5870" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.51.46-1024x525.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.51.46-300x154.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.51.46-768x394.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.51.46-1536x788.jpg 1536w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.51.46-1200x616.jpg 1200w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.51.46.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>2)Choose any one of the Bolt Cloud Pro for 1 Month or Annual (to choose click upgrade) and then fill in your details after that click on next and pay using your desired payment method, that is it your subscription will get enabled in few minutes (check your email).</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="527" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-05-02.17.52-1024x527.jpg" alt="" class="wp-image-5871" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-05-02.17.52-1024x527.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-05-02.17.52-300x154.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-05-02.17.52-768x395.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-05-02.17.52-1536x790.jpg 1536w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-05-02.17.52-1200x618.jpg 1200w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-05-02.17.52.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong>Step </strong>2:&nbsp;<strong>Collecting your Bolt&#8217;s Device ID and API key</strong></p>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<p><strong> </strong>In the further section, we will program using python where we need Device ID and API key.</p>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<ol><li>The API key and Device ID of the Bolt module can be determined as follows:</li></ol>
+</div></div>
+</div></div>
+
+
+
+<p>Connect your Bolt Device to the Bolt Cloud as per instructions given at&nbsp;<a href="https://cloud.boltiot.com/">https://cloud.boltiot.com/</a></p>
+
+
+
+<p>The following screen will appear after that. The Bolt Device ID is visible copy it.</p>
+</div></div>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="530" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.50.32-1024x530.jpg" alt="" class="wp-image-5872" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.50.32-1024x530.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.50.32-300x155.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.50.32-768x398.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.50.32-1536x795.jpg 1536w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.50.32-1200x621.jpg 1200w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.50.32.jpg 1901w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>2)Go to the API section to know the API Key. Click on the ‘eye’ button to see the API key.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="537" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.40.07-1024x537.jpg" alt="" class="wp-image-5873" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.40.07-1024x537.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.40.07-300x157.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.40.07-768x402.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.40.07-1536x805.jpg 1536w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.40.07-1200x629.jpg 1200w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/PicsArt_06-07-01.40.07.jpg 1912w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Note the device ID and API key, it will be used for configuring the auto functionality.</p>
+
+
+
+<p><strong>Step </strong>3:&nbsp;<strong>Writing Code in your favourite Python IDE</strong></p>
+
+
+
+<p>You can install any Python IDE, I am using PyCharm and if you want to use it and don&#8217;t know how to install and configure then check this link: <a rel="noreferrer noopener" href="https://www.codewithharry.com/videos/python-tutorials-for-absolute-beginners-2" target="_blank">https://www.codewithharry.com/videos/python-tutorials-for-absolute-beginners-2</a></p>
+
+
+
+<p><strong>Step </strong>4:&nbsp;<strong>Create a new conf.py file </strong></p>
+
+
+
+<pre class="wp-block-preformatted">bolt_api_key = <strong>"**********************************"                 </strong><em># This is your Bolt Cloud API Key
+</em>device_id = <strong>"BOLT*******"        </strong><em># This is the device ID and will be similar to BOLTXXXX where XXXX is some numbers</em></pre>
+
+
+
+<p>In your PyCharm, create a new file and <strong>copy-paste</strong> the above code and name the file <strong>conf.py</strong>. Now, change the details like the API key and Device ID with your own, the instructions for that are already in the code as the comment, so no need to worry about that.</p>
+
+
+
+<p><strong>Step </strong>4:&nbsp;<strong>Let&#8217;s Jump Right on to the Coding Section</strong></p>
+
+
+
+<p>Create a new python file in PyCharm. The below code is divided into seven parts, all are basic and nothing to get scared of. I am explaining everything below. The full code is given below after the explanation.</p>
+
+
+
+<p><strong><span class="has-inline-color has-accent-color">First Part of the Code:</span></strong></p>
+
+
+
+<pre class="wp-block-preformatted">import requests  <em># for making HTTP requests
+</em>import json  <em># library for handling JSON data
+</em>import time  <em># module for sleep operation
+
+</em>from boltiot import Bolt  <em># importing Bolt from boltiot module
+</em>import conf  <em># config file
+
+</em>mybolt = Bolt(conf.bolt_api_key, conf.device_id)</pre>
+
+
+
+<p>I hope you have already installed these libraries (if you are following the Bolt IoT course) if not using <strong>pip</strong> and <strong>command prompt</strong> you can. And if you are facing any problem <strong>forum</strong> will be helpful. So, in the above code we just imported the libraries we will need later. And we have also collected the API key and Device ID from <strong>conf.py</strong>.</p>
+
+
+
+<p><strong><span class="has-inline-color has-accent-color">Second Part of the Code:</span></strong></p>
+
+
+
+<pre class="wp-block-preformatted"><em># Python program to implement Morse Code Translator
+
+</em><strong>'''
+VARIABLE KEY
+'cipher' -&gt; 'stores the morse translated form of the english string'
+'decipher' -&gt; 'stores the english translated form of the morse string'
+'citext' -&gt; 'stores morse code of a single character'
+'i' -&gt; 'keeps count of the spaces between morse characters'
+'message' -&gt; 'stores the string to be encoded or decoded'
+'''
+
+</strong><em># Dictionary representing the morse code chart
+</em>MORSE_CODE_DICT = { <strong>'A'</strong>:<strong>'.-'</strong>, <strong>'B'</strong>:<strong>'-...'</strong>,
+                    <strong>'C'</strong>:<strong>'-.-.'</strong>, <strong>'D'</strong>:<strong>'-..'</strong>, <strong>'E'</strong>:<strong>'.'</strong>,
+                    <strong>'F'</strong>:<strong>'..-.'</strong>, <strong>'G'</strong>:<strong>'--.'</strong>, <strong>'H'</strong>:<strong>'....'</strong>,
+                    <strong>'I'</strong>:<strong>'..'</strong>, <strong>'J'</strong>:<strong>'.---'</strong>, <strong>'K'</strong>:<strong>'-.-'</strong>,
+                    <strong>'L'</strong>:<strong>'.-..'</strong>, <strong>'M'</strong>:<strong>'--'</strong>, <strong>'N'</strong>:<strong>'-.'</strong>,
+                    <strong>'O'</strong>:<strong>'---'</strong>, <strong>'P'</strong>:<strong>'.--.'</strong>, <strong>'Q'</strong>:<strong>'--.-'</strong>,
+                    <strong>'R'</strong>:<strong>'.-.'</strong>, <strong>'S'</strong>:<strong>'...'</strong>, <strong>'T'</strong>:<strong>'-'</strong>,
+                    <strong>'U'</strong>:<strong>'..-'</strong>, <strong>'V'</strong>:<strong>'...-'</strong>, <strong>'W'</strong>:<strong>'.--'</strong>,
+                    <strong>'X'</strong>:<strong>'-..-'</strong>, <strong>'Y'</strong>:<strong>'-.--'</strong>, <strong>'Z'</strong>:<strong>'--..'</strong>,
+                    <strong>'1'</strong>:<strong>'.----'</strong>, <strong>'2'</strong>:<strong>'..---'</strong>, <strong>'3'</strong>:<strong>'...--'</strong>,
+                    <strong>'4'</strong>:<strong>'....-'</strong>, <strong>'5'</strong>:<strong>'.....'</strong>, <strong>'6'</strong>:<strong>'-....'</strong>,
+                    <strong>'7'</strong>:<strong>'--...'</strong>, <strong>'8'</strong>:<strong>'---..'</strong>, <strong>'9'</strong>:<strong>'----.'</strong>,
+                    <strong>'0'</strong>:<strong>'-----'</strong>, <strong>', '</strong>:<strong>'--..--'</strong>, <strong>'.'</strong>:<strong>'.-.-.-'</strong>,
+                    <strong>'?'</strong>:<strong>'..--..'</strong>, <strong>'/'</strong>:<strong>'-..-.'</strong>, <strong>'-'</strong>:<strong>'-....-'</strong>,
+                    <strong>'('</strong>:<strong>'-.--.'</strong>, <strong>')'</strong>:<strong>'-.--.-'</strong>}</pre>
+
+
+
+<p>Inside the above code, comments are giving info about the variables used in the code and finally a dictionary which you can consider as secret code for each letter, number and symbol. Here we are using <em><strong>Morse Code</strong></em>, but you can create your own custom dictionary by changing the symbols for letters.</p>
+
+
+
+<p><strong><span class="has-inline-color has-accent-color">Third Part of the Code:</span></strong></p>
+
+
+
+<pre class="wp-block-preformatted"><em># Function to encrypt the string
+# according to the morse code chart
+</em>def encrypt(message):
+    cipher = <strong>''
+    </strong>for letter in message:
+        if letter != <strong>' '</strong>:
+
+            <em># Looks up the dictionary and adds the
+            # correspponding morse code
+            # along with a space to separate
+            # morse codes for different characters
+            </em>cipher += MORSE_CODE_DICT[letter] + <strong>' '
+        </strong>else:
+            <em># 1 space indicates different characters
+            # and 2 indicates different words
+            </em>cipher += <strong>' '
+
+    </strong>return cipher
+
+<em># Function to decrypt the string
+# from morse to english
+</em>def decrypt(message):
+
+    <em># extra space added at the end to access the
+    # last morse code
+    </em>message += <strong>' '
+
+    </strong>decipher = <strong>''
+    </strong>citext = <strong>''
+    </strong>for letter in message:
+
+        <em># checks for space
+        </em>if (letter != <strong>' '</strong>):
+
+            <em># counter to keep track of space
+            </em>i = 0
+
+            <em># storing morse code of a single character
+            </em>citext += letter
+
+        <em># in case of space
+        </em>else:
+            <em># if i = 1 that indicates a new character
+            </em>i += 1
+
+            <em># if i = 2 that indicates a new word
+            </em>if i == 2 :
+
+                <em># adding space to separate words
+                </em>decipher += <strong>' '
+            </strong>else:
+
+                <em># accessing the keys using their values (reverse of encryption)
+                </em>decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT
+                .values()).index(citext)]
+                citext = <strong>''
+
+    </strong>return decipher</pre>
+
+
+
+<p>Using the above code our program will encrypt and decrypt messages from plain English to Morse Code. However, in this demonstration, we will mainly use the encryption part of the code.</p>
+
+
+
+<p><strong><span class="has-inline-color has-accent-color">Fourth Part of the Code:</span></strong></p>
+
+
+
+<pre class="wp-block-preformatted"><em># Hard-coded driver function to run the program
+</em>def main():
+    message = <strong>"I LOVE YOU" </strong>#whatever your message is write here<strong>
+    </strong>global result
+    result = encrypt(message.upper())
+    print (result)
+
+#you can comment down the below three lines if you want 
+    message = <strong>"..  .-.. --- ...- .  -.-- --- ..-"
+    </strong>result2 = decrypt(message)
+    print (result2)
+
+<em># Executes the main function
+</em>if __name__ == <strong>'__main__'</strong>:
+    main()</pre>
+
+
+
+<p>The main function contains our message, I have written &#8220;<span class="has-inline-color has-accent-color">I LOVE YOU</span>&#8221; but you can write anything, you can even share your <strong>passwords and other personal details.</strong> (But be careful with sensitive details)</p>
+
+
+
+<p><strong><span class="has-inline-color has-accent-color">Fifth Part of the Code:</span></strong></p>
+
+
+
+<pre class="wp-block-preformatted">def wake_bolt_buzzer(pin):<br>    <em>"""Returns status of bolt and also alarms for new message arrival. Returns -999 if request fails"""<br></em><em>    </em>try:<br>        response = mybolt.analogWrite(pin,150)<br>        data = json.loads(response)<br>        if data[<strong>"success"</strong>] != 1:<br>            print(<strong>"Request not successful"</strong>)<br>            print(<strong>"This is the response-&gt;"</strong>, data)<br>            return -999<br>        response == mybolt.analogWrite(pin, 0)<br>        time.sleep(2)<br>        return print(<strong>"Bolt detected ON"</strong>)<br>    except Exception as e:<br>        print(<strong>"Offline detected, check again"</strong>)<br>        print(e)<br>        return -999<br><br><em>#calling wake_bolt_buzzer function to turn alarm the receiver via Bolt Buzzer<br></em>wake_bolt_buzzer(0)</pre>
+
+
+
+<p>You can say that <strong>the above part works as a <span style="color:#db0d4b" class="has-inline-color">notification</span></strong> for the receiver by turning ON the Buzzer for two seconds and then automatically turning it OFF. (In this case, your Bolt Wifi Module should be connected to a 5V power supply and internet connection. That means the only need is that it should be online connected to the Bolt Cloud server.)</p>
+
+
+
+<p><strong><span class="has-inline-color has-accent-color">Sixth Part of the Code:</span></strong></p>
+
+
+
+<pre class="wp-block-preformatted">def ledCode():
+    <em>""" Coding morse code into digital string codes """
+    </em>global blink
+    blink= str(result)
+    blink=blink.replace(<strong>'-'</strong>,<strong>'1'</strong>)
+    blink=blink.replace(<strong>'.'</strong>,<strong>'0'</strong>)
+    skips= [<strong>' '</strong>]
+    for ch in skips :
+        blink=list(blink) <em>
+    </em>print(blink)
+
+ledCode()</pre>
+
+
+
+<p>Here in the above code, we just replaced <strong>&#8216;-&#8216;</strong> with <strong>&#8216;1&#8217;</strong> and <strong>&#8216;.&#8217;</strong> with <strong>&#8216;0&#8217;</strong>. We did this because we wanted a better look at the encrypted code in binary values which we will use later to turn LED &#8216;ON and OFF&#8217;, we stored that in a list. Here is an example if you are finding it difficult to understand.</p>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<ul><li><strong>Message: <span class="has-inline-color has-accent-color">I LOVE YOU</span></strong>   </li><li><strong>After Encryption: </strong><span class="has-inline-color has-accent-color"><strong>.. .-.. &#8212; …- . -.&#8211; &#8212; ..-</strong> </span></li><li><strong>In list as Binary: <span class="has-inline-color has-accent-color">[&#8216;0&#8217;, &#8216;0&#8217;, &#8216; &#8216;, &#8216; &#8216;, &#8216;0&#8217;, &#8216;1&#8217;, &#8216;0&#8217;, &#8216;0&#8217;, &#8216; &#8216;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216; &#8216;, &#8216;0&#8217;, &#8216;0&#8217;, &#8216;0&#8217;, &#8216;1&#8217;, &#8216; &#8216;, &#8216;0&#8217;, &#8216; &#8216;, &#8216; &#8216;, &#8216;1&#8217;, &#8216;0&#8217;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216; &#8216;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216;1&#8217;, &#8216; &#8216;, &#8216;0&#8217;, &#8216;0&#8217;, &#8216;1&#8217;, &#8216; &#8216;]</span></strong></li><li><strong>And in the end, it will transform as</strong><span class="has-inline-color has-accent-color"><strong> LED &#8216;ON and OFF</strong>&#8216;</span>                 </li></ul>
+
+
+
+<p>You may ask what are ( &#8216; &#8216; , &#8216; &#8216; ) or two spaces and ( &#8216; &#8216; ) or one space in the above list. If you saw the program carefully you might already know. Two spaces* means space between two words while *one space* means the next letter of the same word. They help us to get the exact letter and word from cipher.</p>
+
+
+
+<p><strong><span class="has-inline-color has-accent-color">Seventh Part of the Code:</span></strong></p>
+
+
+
+<pre class="wp-block-preformatted">i=0<br><br>for blink[i] in blink:<br>    <em>#led turns ON for 1 or (-) and OFF for 0 or (.), simultaneously buzzer alarms for every new character data<br></em><em>    </em>try:<br>        if blink[i] == <strong>'1'</strong>:<br>            print(<strong>"it is a 1"</strong>)<br>            buzzerOn = mybolt.analogWrite(0,50)<br>            ledON = mybolt.digitalWrite(<strong>'1'</strong>,<strong>'HIGH'</strong>)<br>            time.sleep(1)<br>            buzzerOff = mybolt.analogWrite(0,0)<br>            time.sleep(1)<br>            ledOff = mybolt.digitalWrite(<strong>'1'</strong>,<strong>'LOW'</strong>)<br>            i = i+1<br>            continue<br><br>        if blink[i] == <strong>'0'</strong>:<br>            print(<strong>'it is a 0'</strong>)<br>            buzzerOn = mybolt.analogWrite(0,50)<br>            ledON = mybolt.digitalWrite(<strong>'1'</strong>,<strong>'LOW'</strong>)<br>            time.sleep(1)<br>            buzzerOff = mybolt.analogWrite(0,0)<br>            time.sleep(1)<br>            i = i+1<br>            ledOff = mybolt.digitalWrite(<strong>'1'</strong>,<strong>'LOW'</strong>)<br>            continue<br><br>        else:<br>            print(<strong>"give space here"</strong>) <em>#*Two spaces* means space between two words while *one space* means next letter of same word<br></em><em>            </em>buzzerOn = mybolt.analogWrite(0, 50)<br>            ledON = mybolt.digitalWrite(<strong>'4'</strong>, <strong>'HIGH'</strong>)<br>            time.sleep(1)<br>            buzzerOff = mybolt.analogWrite(0, 0)<br>            time.sleep(1)<br>            ledOff = mybolt.digitalWrite(<strong>'4'</strong>, <strong>'LOW'</strong>)<br>            i = i + 1<br>            continue<br><br>    except Exception as e:<br>        print(<strong>"Something went wrong when connecting"</strong>)<br>        print(e)</pre>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<p id="block-1fa08b30-6aac-4e28-9bf4-ae146b3954b4">The above code does the following until the message ends: LED<sub>1</sub> turns ON for 1 or (-) and OFF for 0 or (.), simultaneously buzzer alarms for every new character data received by the wifi module every two seconds. Not to forget when we need to give a gap in letters and words the LED<sub>2</sub> glows up (&#8216;Two consecutive lights glows&#8217; of LED<sub>2</sub> means space between two words while &#8216;single glow&#8217; means the next letter of the same word.) You need to be focused while receiving and decoding message by yourself. </p>
+</div></div>
+
+
+
+<h2>Complete Code </h2>
+
+
+
+<p>Click to Download Python Code Files for Project: <a rel="noreferrer noopener" href="https://github.com/techonair/SecrectMessageIoTProject" target="_blank"></a><a rel="noreferrer noopener" href="https://github.com/techonair/Secret-Message-IoT-Project" target="_blank" data-type="URL" data-id="https://github.com/techonair/Secret-Message-IoT-Project">techonair/Secret-Message-IoT-Project: Using IoT technology and Morse Code building a secret messaging system (github.com)</a></p>
+
+
+
+<h3><strong>Schematics</strong></h3>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="796" src="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-3-1024x796.jpg" alt="" class="wp-image-5721" srcset="https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-3-1024x796.jpg 1024w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-3-300x233.jpg 300w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-3-768x597.jpg 768w, https://projectsubmission.boltiot.com/wp-content/uploads/2021/06/Circuit-1_bb-3.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div></div>
+
+
+
+<h2>Video <strong>Demonstration</strong>                      </h2>
+
+
+
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="Secret Message Using LEDs and Morse Code | IoT project using Python" width="580" height="326" src="https://www.youtube.com/embed/H6fYrunpuHQ?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div><figcaption>Click to watch it. </figcaption></figure>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		<div class="post-meta-wrapper post-meta-edit-link-wrapper"><ul class="post-meta"><li class="post-edit meta-wrapper"><span class="meta-icon"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M14.7272727,11.1763636 C14.7272727,10.7244943 15.0935852,10.3581818 15.5454545,10.3581818 C15.9973239,10.3581818 16.3636364,10.7244943 16.3636364,11.1763636 L16.3636364,15.5454545 C16.3636364,16.9010626 15.2646989,18 13.9090909,18 L2.45454545,18 C1.09893743,18 0,16.9010626 0,15.5454545 L0,4.09090909 C0,2.73530107 1.09893743,1.63636364 2.45454545,1.63636364 L6.82363636,1.63636364 C7.2755057,1.63636364 7.64181818,2.00267611 7.64181818,2.45454545 C7.64181818,2.9064148 7.2755057,3.27272727 6.82363636,3.27272727 L2.45454545,3.27272727 C2.00267611,3.27272727 1.63636364,3.63903975 1.63636364,4.09090909 L1.63636364,15.5454545 C1.63636364,15.9973239 2.00267611,16.3636364 2.45454545,16.3636364 L13.9090909,16.3636364 C14.3609602,16.3636364 14.7272727,15.9973239 14.7272727,15.5454545 L14.7272727,11.1763636 Z M6.54545455,9.33890201 L6.54545455,11.4545455 L8.66109799,11.4545455 L16.0247344,4.09090909 L13.9090909,1.97526564 L6.54545455,9.33890201 Z M14.4876328,0.239639906 L17.7603601,3.51236718 C18.07988,3.83188705 18.07988,4.34993113 17.7603601,4.669451 L9.57854191,12.8512692 C9.42510306,13.004708 9.21699531,13.0909091 9,13.0909091 L5.72727273,13.0909091 C5.27540339,13.0909091 4.90909091,12.7245966 4.90909091,12.2727273 L4.90909091,9 C4.90909091,8.78300469 4.99529196,8.57489694 5.14873082,8.42145809 L13.330549,0.239639906 C13.6500689,-0.0798799688 14.1681129,-0.0798799688 14.4876328,0.239639906 Z" /></svg></span><span class="meta-text"><a href="https://projectsubmission.boltiot.com/wp-admin/post.php?post=5296&#038;action=edit">Edit <span class="screen-reader-text">Secret Chat using &#8220;Morse Code and LED&#8221;</span></a></span></li></ul><!-- .post-meta --></div><!-- .post-meta-wrapper -->
+	</div><!-- .section-inner -->
+
+	
+	<nav class="pagination-single section-inner only-one only-prev" aria-label="Post" role="navigation">
+
+		<hr class="styled-separator is-style-wide" aria-hidden="true" />
+
+		<div class="pagination-single-inner">
+
+			
+				<a class="previous-post" href="https://projectsubmission.boltiot.com/2020/11/23/submitting-a-project/">
+					<span class="arrow" aria-hidden="true">&larr;</span>
+					<span class="title"><span class="title-inner">Submitting a project</span></span>
+				</a>
+
+				
+		</div><!-- .pagination-single-inner -->
+
+		<hr class="styled-separator is-style-wide" aria-hidden="true" />
+
+	</nav><!-- .pagination-single -->
+
+	
+		<div class="comments-wrapper section-inner">
+
+				<div id="respond" class="comment-respond">
+		<h2 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/?p=5296&amp;preview=true#respond" style="display:none;">Cancel reply</a></small></h2><form action="https://projectsubmission.boltiot.com/wp-comments-post.php" method="post" id="commentform" class="section-inner thin max-percentage" novalidate><p class="logged-in-as"><a href="https://projectsubmission.boltiot.com/wp-admin/profile.php" aria-label="Logged in as Bhanu Pratap. Edit your profile.">Logged in as Bhanu Pratap</a>. <a href="https://projectsubmission.boltiot.com/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Fprojectsubmission.boltiot.com%2F%3Fp%3D5296&amp;_wpnonce=696a6d85eb">Log out?</a></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5296' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	
+		</div><!-- .comments-wrapper -->
+
+		
+</article><!-- .post -->
+
+</main><!-- #site-content -->
+
+
+	<div class="footer-nav-widgets-wrapper header-footer-group">
+
+		<div class="footer-inner section-inner">
+
+			
+			
+				<aside class="footer-widgets-outer-wrapper" role="complementary">
+
+					<div class="footer-widgets-wrapper">
+
+						
+							<div class="footer-widgets column-one grid-item">
+								<div class="widget_text widget widget_custom_html"><div class="widget_text widget-content"><div class="textwidget custom-html-widget"><div id=footer>
+	<center><a href="https://www.instagram.com/boltiot/?hl=en">
+		<img class=footerlogo src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-instagram-new-circle-512.png" alt="">
+		</a>
+		<a href="https://www.facebook.com/boltiot">
+		<img class=footerlogo src="https://cdn0.iconfinder.com/data/icons/shift-logotypes/32/Facebook-128.png" alt="">
+		</a>
+		<a href="https://twitter.com/boltiot">
+		<img class=footerlogo src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-128.png" alt="">
+		</a>
+	</center>
+</div>
+
+<style>
+	.footerlogo{
+  display: inline-block;
+  height: 50px; /*sets height of element*/
+-align: center;
+ /*sets the background of this element (here a solid colour)*/
+  transition: all 0.6s; /*sets a transition (for hover effect)*/
+  padding-left: 5px; /*sets 'padding'*/
+  padding-right: 5px; /*sets 'padding'*/
+  line-height: 50px; /*for this, it sets vertical alignment*/
+}
+img:hover {
+  background: black; /*sets background colour*/
+}
+#footer{
+  display: inline-block;
+   background: white;
+  height: 70px;
+  width: 100%;
+}
+</style>	</div></div></div>							</div>
+
+						
+						
+							<div class="footer-widgets column-two grid-item">
+								<div class="widget widget_text"><div class="widget-content"><h2 class="widget-title subheading heading-size-3">Contact</h2>			<div class="textwidget"><p>Inventrom Private Limited</p>
+<p>79, 11th Cross Rd, BinnamangalaIndiranagar, Bengaluru Bengaluru, Karnataka 560038India<br />
+<i class="fa fa-phone color-white" aria-hidden="true"></i> (+91) 8881197198<br />
+<i class="fa fa-envelope color-white" aria-hidden="true"></i><a href="mailto:support@boltiot.com">support@boltiot.com</a></p>
+</div>
+		</div></div>							</div>
+
+						
+					</div><!-- .footer-widgets-wrapper -->
+
+				</aside><!-- .footer-widgets-outer-wrapper -->
+
+			
+		</div><!-- .footer-inner -->
+
+	</div><!-- .footer-nav-widgets-wrapper -->
+
+
+			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+
+				<div class="section-inner">
+
+					<div class="footer-credits">
+
+						<p class="footer-copyright">&copy;
+							2021							<a href="https://projectsubmission.boltiot.com/">Bolt IoT project submission</a>
+						</p><!-- .footer-copyright -->
+
+						<p class="powered-by-wordpress">
+							<a href="https://wordpress.org/">
+								Powered by WordPress							</a>
+						</p><!-- .powered-by-wordpress -->
+
+					</div><!-- .footer-credits -->
+
+					<a class="to-the-top" href="#site-header">
+						<span class="to-the-top-long">
+							To the top <span class="arrow" aria-hidden="true">&uarr;</span>						</span><!-- .to-the-top-long -->
+						<span class="to-the-top-short">
+							Up <span class="arrow" aria-hidden="true">&uarr;</span>						</span><!-- .to-the-top-short -->
+					</a><!-- .to-the-top -->
+
+				</div><!-- .section-inner -->
+
+			</footer><!-- #site-footer -->
+
+		<script src='https://projectsubmission.boltiot.com/wp-includes/js/comment-reply.min.js?ver=5.5.3' id='comment-reply-js'></script>
+<script src='https://projectsubmission.boltiot.com/wp-includes/js/wp-embed.min.js?ver=5.5.3' id='wp-embed-js'></script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	
+	</body>
+</html>
